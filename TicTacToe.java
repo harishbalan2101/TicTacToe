@@ -1,21 +1,19 @@
-
 public class TicTacToe {
 
+    static char[][] board = new char[3][3];
+
     public static void main(String[] args) {
+        System.out.println(isDraw());
+    }
 
-        char[][] board = new char[3][3];
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                board[i][j] = '-';
+    static boolean isDraw() {
+        for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                if (board[r][c] == '-') {
+                    return false;
+                }
             }
         }
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
+        return true;
     }
 }
