@@ -1,21 +1,14 @@
+static boolean isValidMove(int row, int col) {
 
-public class TicTacToe {
-
-    public static void main(String[] args) {
-
-        char[][] board = new char[3][3];
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                board[i][j] = '-';
-            }
-        }
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
+   
+    if (row < 0 || row > 2 || col < 0 || col > 2) {
+        return false;
     }
+
+
+    if (board[row][col] != ' ') {
+        return false;
+    }
+
+    return true; 
 }
